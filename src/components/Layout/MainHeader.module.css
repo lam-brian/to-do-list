@@ -1,0 +1,6 @@
+.header h1 {
+  color: var(--cyan-shade);
+  font-size: 3.6rem;
+  text-align: center;
+  padding: 2.4rem 3.2rem;
+}

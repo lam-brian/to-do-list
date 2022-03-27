@@ -1,0 +1,8 @@
+.section {
+  background-color: var(--cyan-shade);
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 2.4rem;
+  border-radius: 1rem;
+  margin-bottom: 2.4rem;
+}

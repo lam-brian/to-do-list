@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import MainHeader from "./components/Layout/MainHeader";
+import NewTask from "./components/NewTask/NewTask";
+import Tasks from "./components/Tasks/Tasks";
+
+const DUMMY_DATA = [
+  {
+    title: "Create project",
+    description: "use react in order to create a to-do list",
+    date: new Date(),
+    dueDate: "march, 26, 2022",
+  },
+  {
+    title: "Workout",
+    description: "Goto the gym 5 days a week",
+    date: new Date(),
+    dueDate: "march, 26, 2022",
+  },
+  {
+    title: "Workout",
+    description: "Goto the gym 5 days a week",
+    date: new Date(),
+    dueDate: "march, 26, 2022",
+  },
+  {
+    title: "Workout",
+    description: "Goto the gym 5 days a week",
+    date: new Date(),
+    dueDate: "march, 26, 2022",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainHeader />
+      <NewTask />
+      <Tasks tasks={DUMMY_DATA} />
     </div>
   );
 }
