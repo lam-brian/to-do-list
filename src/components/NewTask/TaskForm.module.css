@@ -1,6 +1,5 @@
 .form {
   color: var();
-  /* padding: 1.2rem; */
 }
 
 .form div {
@@ -22,7 +21,7 @@
 
 .form span {
   font-size: 1.4rem;
-  color: var(--grey-cyan-shade);
+  font-weight: 400;
 }
 
 .form input,
@@ -41,7 +40,7 @@
   font-weight: 600;
   background-color: var(--cyan-primary);
   font-size: 1.8rem;
-  color: var(--cyan-tint-lighter);
+  color: var(--black);
   padding: 1rem 1.2rem;
   border-radius: 0.8rem;
 }
