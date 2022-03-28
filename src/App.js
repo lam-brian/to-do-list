@@ -6,8 +6,12 @@ import Tasks from "./components/Tasks/Tasks";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [todaysDate, setTodaysDate] = useState();
 
   useEffect(() => {
+    // Set today's date
+    setTodaysDate(new Date().toLocaleDateString());
+
     // Retrieve tasks stored in local storage
     const storedLocalTasks = localStorage.getItem("tasks");
 
@@ -47,9 +51,10 @@ function App() {
 
   return (
     <div className="App">
-      <MainHeader />
+      <MainHeader todaysDate={todaysDate} />
       <NewTask onAddNewTask={addNewTaskHandler} />
       <Tasks
+        todaysDate={todaysDate}
         tasks={tasks}
         onDeleteTask={deleteTaskHandler}
         onEditTask={editTaskHandler}

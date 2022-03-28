@@ -10,6 +10,12 @@ const TasksItem = (props) => {
   );
   const [enteredDueDate, setEnteredDueDate] = useState(props.taskData.dueDate);
 
+  let formattedDate = props.taskData.dueDate;
+  if (props.taskData.dueDate) {
+    const [year, month, date] = props.taskData.dueDate.split("-");
+    formattedDate = `${month}/${date}/${year}`;
+  }
+
   const submitEditHandler = (e) => {
     e.preventDefault();
 
@@ -48,7 +54,7 @@ const TasksItem = (props) => {
     <>
       <h2>{props.taskData.title}</h2>
       <p>{props.taskData.description}</p>
-      <p>Due: {props.taskData.dueDate || "N/A"}</p>
+      <p>Due: {formattedDate || "N/A"}</p>
       <div>
         <button onClick={() => setEditing(true)}>Edit</button>
         <button onClick={props.onDeleteTask}>Delete</button>

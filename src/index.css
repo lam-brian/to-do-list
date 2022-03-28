@@ -21,6 +21,11 @@ html {
   box-sizing: inherit;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--cyan-primary);
+}
+
 body {
   line-height: 1;
   font-family: "Montserrat", sans-serif;
@@ -37,4 +42,9 @@ button {
 
 button:hover {
   opacity: 75%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(51, 51, 51, 0.26);
 }

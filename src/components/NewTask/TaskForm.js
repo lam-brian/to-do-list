@@ -16,10 +16,14 @@ const TaskForm = (props) => {
     setEnteredDueDate("");
 
     // Lift state data
+
+    let dueDate = enteredDueDate;
+    if (!enteredDueDate) dueDate = 0;
+
     props.onAddNewTask({
       title: enteredTitle,
       description: enteredDescription,
-      dueDate: enteredDueDate,
+      dueDate: dueDate,
       id: Math.random().toString(),
     });
   };
