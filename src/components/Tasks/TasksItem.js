@@ -69,6 +69,7 @@ const TasksItem = (props) => {
         id="title"
         value={enteredTitle}
         onChange={titleChangeHandler}
+        required
       />
       <textarea
         type="text"
