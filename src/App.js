@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <MainHeader todaysDate={todaysDate} />
       <NewTask onAddNewTask={addNewTaskHandler} />
       <Tasks
