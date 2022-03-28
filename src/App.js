@@ -1,42 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import MainHeader from "./components/Layout/MainHeader";
 import NewTask from "./components/NewTask/NewTask";
 import Tasks from "./components/Tasks/Tasks";
 
-const DUMMY_DATA = [
-  {
-    title: "Create project",
-    description: "use react in order to create a to-do list",
-    date: new Date(),
-    dueDate: "march, 26, 2022",
-  },
-  {
-    title: "Workout",
-    description: "Goto the gym 5 days a week",
-    date: new Date(),
-    dueDate: "march, 26, 2022",
-  },
-  {
-    title: "Workout",
-    description: "Goto the gym 5 days a week",
-    date: new Date(),
-    dueDate: "march, 26, 2022",
-  },
-  {
-    title: "Workout",
-    description: "Goto the gym 5 days a week",
-    date: new Date(),
-    dueDate: "march, 26, 2022",
-  },
-];
-
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const storedLocalTasks = localStorage.getItem("tasks");
+
+    if (storedLocalTasks) setTasks(JSON.parse(storedLocalTasks));
+  }, []);
+
+  const addNewTaskHandler = (task) => {
+    setTasks((prevState) => [...prevState, task]);
+
+    const tasksData = [...tasks, task];
+
+    localStorage.setItem("tasks", JSON.stringify(tasksData));
+  };
+
   return (
     <div className="App">
       <MainHeader />
-      <NewTask />
-      <Tasks tasks={DUMMY_DATA} />
+      <NewTask onAddNewTask={addNewTaskHandler} />
+      <Tasks tasks={tasks} />
     </div>
   );
 }

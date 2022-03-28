@@ -5,7 +5,6 @@
   --cyan-tint: #c5e4e7;
   --cyan-shade: #00494d;
   --cyan-tint-lighter: #f4fafa;
-  --grey-cyan: #5e7a7d;
   --grey-cyan-shade: #7f9c9f;
   --white: #fff;
 }
@@ -25,4 +24,11 @@ body {
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   background-color: var(--cyan-tint);
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  border: none;
 }

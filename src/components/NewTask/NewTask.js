@@ -4,7 +4,7 @@ import TaskForm from "./TaskForm";
 const NewTask = (props) => {
   return (
     <Section>
-      <TaskForm />
+      <TaskForm onAddNewTask={props.onAddNewTask} />
     </Section>
   );
 };

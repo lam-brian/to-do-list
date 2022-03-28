@@ -1,0 +1,43 @@
+.tasks-item {
+  display: grid;
+}
+
+.tasks-item h2 {
+  font-size: 2.4rem;
+  color: var(--cyan-primary);
+  margin-bottom: 1.2rem;
+}
+
+.tasks-item p {
+  font-size: 1.8rem;
+  color: var(--grey-cyan--tint);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  max-width: 32rem;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.tasks-item p:nth-child(3) {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--grey-cyan-shade);
+}
+
+.tasks-item div {
+  display: flex;
+  gap: 1rem;
+}
+
+.tasks-item button {
+  background-color: var(--cyan-primary);
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  padding: 4px 8px;
+  align-self: end;
+}
+
+.tasks-item button:nth-child(2) {
+  background-color: var(--cyan-tint);
+}
