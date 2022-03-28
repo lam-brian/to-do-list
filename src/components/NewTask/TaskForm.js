@@ -39,7 +39,9 @@ const TaskForm = (props) => {
   return (
     <form className={styles.form} onSubmit={formSubmitHandler}>
       <div>
-        <label htmlFor="title">Task Name</label>
+        <label htmlFor="title">
+          Task Name <span>(Required)</span>
+        </label>
         <input
           type="text"
           id="title"
@@ -50,7 +52,9 @@ const TaskForm = (props) => {
         />
       </div>
       <div>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description">
+          Description <span>(Optional)</span>
+        </label>
         <textarea
           id="description"
           cols="30"
@@ -61,7 +65,9 @@ const TaskForm = (props) => {
         ></textarea>
       </div>
       <div>
-        <label htmlFor="due-date">Due Date</label>
+        <label htmlFor="due-date">
+          Due Date <span>(Optional)</span>
+        </label>
         <input
           type="date"
           id="due-date"

@@ -8,6 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
+    // Retrieve tasks stored in local storage
     const storedLocalTasks = localStorage.getItem("tasks");
 
     if (storedLocalTasks) setTasks(JSON.parse(storedLocalTasks));
@@ -16,8 +17,31 @@ function App() {
   const addNewTaskHandler = (task) => {
     setTasks((prevState) => [...prevState, task]);
 
+    // Save tasks to local storage
     const tasksData = [...tasks, task];
+    localStorage.setItem("tasks", JSON.stringify(tasksData));
+  };
 
+  const editTaskHandler = (editedTaskData) => {
+    // Edit task
+    const editedTasks = [...tasks];
+    const oldTaskIndex = editedTasks.findIndex(
+      (task) => task.id === editedTaskData.id
+    );
+
+    editedTasks[oldTaskIndex] = editedTaskData;
+
+    setTasks(editedTasks);
+
+    // Update local storage
+    localStorage.setItem("tasks", JSON.stringify(editedTasks));
+  };
+
+  const deleteTaskHandler = (id) => {
+    setTasks((prevState) => prevState.filter((task) => task.id !== id));
+
+    // Update local storage
+    const tasksData = tasks.filter((task) => task.id !== id);
     localStorage.setItem("tasks", JSON.stringify(tasksData));
   };
 
@@ -25,7 +49,11 @@ function App() {
     <div className="App">
       <MainHeader />
       <NewTask onAddNewTask={addNewTaskHandler} />
-      <Tasks tasks={tasks} />
+      <Tasks
+        tasks={tasks}
+        onDeleteTask={deleteTaskHandler}
+        onEditTask={editTaskHandler}
+      />
     </div>
   );
 }

@@ -5,6 +5,7 @@
   --cyan-tint: #c5e4e7;
   --cyan-shade: #00494d;
   --cyan-tint-lighter: #f4fafa;
+  --grey-cyan: #5e7a7d;
   --grey-cyan-shade: #7f9c9f;
   --white: #fff;
 }
@@ -31,4 +32,9 @@ button {
   display: inline-block;
   font-family: inherit;
   border: none;
+  transition: all 0.3s ease-out;
+}
+
+button:hover {
+  opacity: 75%;
 }

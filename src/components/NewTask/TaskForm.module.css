@@ -20,6 +20,11 @@
   font-weight: 500;
 }
 
+.form span {
+  font-size: 1.4rem;
+  color: var(--grey-cyan-shade);
+}
+
 .form input,
 .form textarea {
   font-family: inherit;
