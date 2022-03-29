@@ -10,12 +10,9 @@ const TaskForm = (props) => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    // Reset input fields
     setEnteredTitle("");
     setEnteredDescription("");
     setEnteredDueDate("");
-
-    // Lift state data
 
     let dueDate = enteredDueDate;
     if (!enteredDueDate) dueDate = 0;
