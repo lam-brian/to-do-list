@@ -19,5 +19,5 @@ React
 
 ## How to run
 
-run npm install to download all dependecies
-after all dependencies have been installed, run npm start
+- run npm install to download all dependecies
+- after all dependencies have been installed, run npm start
