@@ -1,4 +1,4 @@
-# hungrify-app
+# to-do list app
 
 [Demo](https://brian-todolist.netlify.app/)
 
