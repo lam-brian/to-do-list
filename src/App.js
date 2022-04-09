@@ -18,12 +18,13 @@ function App() {
     if (storedLocalTasks) setTasks(JSON.parse(storedLocalTasks));
   }, []);
 
+  useEffect(() => {
+    console.log("RUNNING");
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const addNewTaskHandler = (task) => {
     setTasks((prevState) => [...prevState, task]);
-
-    // Save tasks to local storage
-    const tasksData = [...tasks, task];
-    localStorage.setItem("tasks", JSON.stringify(tasksData));
   };
 
   const editTaskHandler = (editedTaskData) => {
@@ -36,17 +37,10 @@ function App() {
     editedTasks[oldTaskIndex] = editedTaskData;
 
     setTasks(editedTasks);
-
-    // Update local storage
-    localStorage.setItem("tasks", JSON.stringify(editedTasks));
   };
 
   const deleteTaskHandler = (id) => {
     setTasks((prevState) => prevState.filter((task) => task.id !== id));
-
-    // Update local storage
-    const tasksData = tasks.filter((task) => task.id !== id);
-    localStorage.setItem("tasks", JSON.stringify(tasksData));
   };
 
   return (
