@@ -81,7 +81,7 @@ const TasksItem = (props) => {
       <input
         type="date"
         id="due-date"
-        value={enteredDueDate}
+        value={enteredDueDate || ""}
         onChange={dueDateChangeHandler}
       />
       <div>

@@ -19,7 +19,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("RUNNING");
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
