@@ -3,9 +3,12 @@
 }
 
 .tasks-item h2 {
+  max-width: 32rem;
   font-size: 2.4rem;
   color: var(--cyan-shade);
   margin-bottom: 1.2rem;
+  display: inline-block;
+  word-wrap: break-word;
 }
 
 .tasks-item p {
